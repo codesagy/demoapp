@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/YOUR_USERNAME/simple-java-app.git' // replace with your repo URL
+                git 'https://github.com/codesagy/demoapp'
             }
         }
 
