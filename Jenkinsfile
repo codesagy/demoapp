@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/YOUR_USERNAME/simple-java-app.git' // or SCM of choice
+                git 'https://github.com/YOUR_USERNAME/simple-java-app.git' // replace with your repo URL
             }
         }
 
@@ -23,10 +23,7 @@ pipeline {
 
     post {
         success {
-            echo 'Build succeeded, artifacts archived.'
-        }
-        failure {
-            echo 'Build failed.'
+            echo '✅ Build and archive successful!'
         }
     }
 }
