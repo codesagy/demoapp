@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/codesagy/demoapp'
+                git branch: 'main', url: 'https://github.com/codesagy/demoapp'
             }
         }
 
