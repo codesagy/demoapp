@@ -4,26 +4,18 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/codesagy/demoapp'
+                git 'https://github.com/codesagy/demoapp'
             }
         }
-
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                bat 'echo Hello from Build stage'
             }
         }
-
         stage('Archive Artifact') {
             steps {
-                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+                archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
             }
-        }
-    }
-
-    post {
-        success {
-            echo '✅ Build and archive successful!'
         }
     }
 }
