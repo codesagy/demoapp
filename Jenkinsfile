@@ -18,9 +18,10 @@ pipeline {
         stage('Archive Artifact') {
             steps {
                 echo 'Archiving build artifacts...'
-                archiveArtifacts artifacts: "${BUILD_DIR}/**", allowEmptyArchive: true
+                archiveArtifacts artifacts: '**/*.*', fingerprint: true
             }
         }
+
     }
 
     post {
